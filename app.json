@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "Native_NFTstore",
-    "slug": "Native_NFTstore",
+    "name": "Native_NFTmarket",
+    "slug": "Native_NFTmarket",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
