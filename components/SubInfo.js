@@ -2,7 +2,7 @@ import { View, Text } from "react-native";
 import React from "react";
 import { SIZES, FONTS, COLORS, SHADOWS, assets } from "../constants";
 import { Image } from "react-native";
-export const SubInfo = () => {
+export const SubInfo = ({ id }) => {
   return (
     <View
       style={{
@@ -13,19 +13,49 @@ export const SubInfo = () => {
         justifyContent: "space-between",
       }}
     >
-      <People />
+      <People id={id} />
       <EndDate></EndDate>
     </View>
   );
 };
 
 export const NFTTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
-  return <Text style={{ bottom: -10 }}>{title}</Text>;
-};
-export const EthPrice = () => {
   return (
     <View>
-      <Text>Title</Text>
+      <Text
+        style={{
+          bottom: -10,
+          fontFamily: FONTS.semiBold,
+          fontSize: titleSize,
+          color: COLORS.primary,
+        }}
+      >
+        {title}
+      </Text>
+      <Text
+        style={{
+          bottom: -10,
+          fontFamily: FONTS.light,
+          fontSize: subTitleSize,
+          color: COLORS.primary,
+        }}
+      >
+        {subTitle}
+      </Text>
+    </View>
+  );
+};
+export const EthPrice = ({ price }) => {
+  return (
+    <View style={{ flexDirection: `row`, alignItems: `center` }}>
+      <Image
+        source={assets.eth}
+        resizeMode="contain"
+        style={{ width: 20, height: 20, marginRight: 2 }}
+      />
+      <Text style={{ fontFamily: FONTS.medium, fontSize: SIZES.font }}>
+        {price}
+      </Text>
     </View>
   );
 };
@@ -44,7 +74,7 @@ export const ImageCmp = ({ imgUrl, index }) => {
   );
 };
 
-export const People = () => {
+export const People = ({ id }) => {
   return (
     <View style={{ flexDirection: `row` }}>
       {[assets.person02, assets.person03, assets.person04, assets.person05].map(

@@ -1,9 +1,11 @@
+import LinearGradient from "react-native-linear-gradient"
 export const COLORS = {
   primary: "#001F2D",
   secondary: "#4D626C",
 
   white: "#FFF",
   gray: "#74858C",
+  linearBg: "linear-gradient(#feac5e, #c779d0, #4bc0c8);",
 };
 
 export const SIZES = {

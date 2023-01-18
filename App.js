@@ -24,8 +24,8 @@ export default App = () => {
   if (!loaded) return null;
   return (
     <NavigationContainer theme={theme}>
-      <Stack.Navigator
-        screenOptions={{ headerShown: true }}
+      <Stack.Navigator 
+        screenOptions={{ headerShown: false }}
         initialRouteName="Home"
       >
         <Stack.Screen name="Home" component={Home} />
