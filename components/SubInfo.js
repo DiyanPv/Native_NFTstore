@@ -15,6 +15,7 @@ export const SubInfo = ({ id }) => {
     >
       <People id={id} />
       <EndDate></EndDate>
+
     </View>
   );
 };

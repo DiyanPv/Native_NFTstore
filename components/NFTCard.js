@@ -5,6 +5,7 @@ import { COLORS, SIZES, SHADOWS, assets } from "../constants";
 import { CircleButton, RectButton } from "./Buttons";
 import { SubInfo, EthPrice, NFTTitle } from "./SubInfo";
 const NFTCard = ({ data }) => {
+    console.log(data)
   const navigation = useNavigation();
   return (
     <View
