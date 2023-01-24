@@ -72,3 +72,10 @@
     transform: translateZ(0);
   }
 }
+html {
+  height: 100vh;
+  display: block;
+}
+body {
+  min-width: 100%;
+}

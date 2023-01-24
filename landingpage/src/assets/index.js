@@ -7,6 +7,7 @@ import javascript from "./javascript.png";
 import react from "./react.png";
 import scene from "./scene.png";
 import mockup from "./mockup.png";
+import tailwind from "./tailwind.svg";
 
 export default {
   homeHero,
@@ -18,4 +19,5 @@ export default {
   react,
   scene,
   mockup,
+  tailwind,
 };

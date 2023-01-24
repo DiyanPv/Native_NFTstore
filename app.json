@@ -1,5 +1,6 @@
 {
   "expo": {
+    "owner": "nativenft",
     "name": "Native_NFTmarket",
     "slug": "Native_NFTmarket",
     "version": "1.0.0",
@@ -18,16 +19,23 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "NativeNFTMarket.com"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "NativeNFTMarket.com"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "24ce0e4b-e6b6-42f0-94d1-915450ee6251"
+      }
     }
   }
 }
