@@ -15,14 +15,20 @@ export const SubInfo = ({ id }) => {
     >
       <People id={id} />
       <EndDate></EndDate>
-
     </View>
   );
 };
 
-export const NFTTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
+export const NFTTitle = ({
+  title,
+  subTitle,
+  titleSize,
+  subTitleSize,
+  marginLeft,
+  marginRight,
+}) => {
   return (
-    <View>
+    <View style={{ marginLeft: marginLeft }}>
       <Text
         style={{
           bottom: -10,
@@ -46,15 +52,21 @@ export const NFTTitle = ({ title, subTitle, titleSize, subTitleSize }) => {
     </View>
   );
 };
-export const EthPrice = ({ price }) => {
+export const EthPrice = ({ price, marginRight , font}) => {
   return (
-    <View style={{ flexDirection: `row`, alignItems: `center` }}>
+    <View
+      style={{
+        flexDirection: `row`,
+        alignItems: `center`,
+        marginRight: marginRight,
+      }}
+    >
       <Image
         source={assets.eth}
         resizeMode="contain"
         style={{ width: 20, height: 20, marginRight: 2 }}
       />
-      <Text style={{ fontFamily: FONTS.medium, fontSize: SIZES.font }}>
+      <Text style={{ fontFamily: FONTS.medium, fontSize: font || SIZES.font }}>
         {price}
       </Text>
     </View>

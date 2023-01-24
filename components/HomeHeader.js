@@ -1,7 +1,8 @@
 import React from "react";
 import { Text, View, Image, TextInput } from "react-native";
 import { COLORS, FONTS, SIZES, assets } from "../constants";
-export const HomeHeader = () => {
+export const HomeHeader = ({onSearch}) => {
+
   return (
     <View style={{ backgroundColor: `black`, padding: SIZES.font }}>
       <View
@@ -75,7 +76,8 @@ export const HomeHeader = () => {
             <TextInput
               placeholder="Search"
               placeholderTextColor={`white`}
-              stlye={{ backgroundColor: `white`, marginTop: 10, width: `100%` }}
+   
+              onChange={onSearch}
             ></TextInput>
           </View>
         </View>

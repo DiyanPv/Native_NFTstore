@@ -31,14 +31,16 @@ export const RectButton = ({
   fontSize,
   minWidth,
   backgroundColor,
+  width,
   ...props
 }) => {
   return (
     <TouchableOpacity
       style={{
+        minWidth: width,
         backgroundColor: COLORS.primary,
         borderRadius: SIZES.extraLarge,
-        minWidth: minWidth,
+
         padding: SIZES.small,
         marginBottom: 8,
         backgroundColor: backgroundColor || `black`,

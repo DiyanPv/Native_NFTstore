@@ -46,21 +46,23 @@ export const Details = ({ route, navigation }) => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <StatusBarView barStyle="dark-content" backgroundColor="transparent" />
+      <StatusBarView barStyle="dark-content" backgroundColor="transparent"/>
+
       <View
         style={{
-          width: `100%`,
-          position: `absolute`,
+          width: "100%",
+          position: "absolute",
           bottom: 0,
-          paddingBottom: 6,
-          justifyContent: `center`,
-          alignItems: `center`,
+          paddingVertical: SIZES.font,
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: "rgba(255,255,255,0.4)",
           zIndex: 1,
         }}
       >
         <RectButton
-          minWidth={170}
           fontSize={16}
+          width={200}
           {...SHADOWS.dark}
           backgroundColor={"rgba(63, 246, 238, 0.9)"}
         />
@@ -70,7 +72,20 @@ export const Details = ({ route, navigation }) => {
           <React.Fragment>
             <DetailsHeader image={data.image} />
             <SubInfo />
-            <DetailsDescription data={data}/>
+            <DetailsDescription data={data} />
+            {data.bids.length > 0 && (
+              <Text
+                style={{
+                  marginBottom: 15,
+                  fontSize: 14,
+                  fontFamily: FONTS.semiBold,
+                  color: COLORS.primary,
+                  marginLeft: 10, 
+                }}
+              >
+                Current Bid
+              </Text>
+            )}
           </React.Fragment>
         )}
         data={data.bids}
@@ -79,15 +94,10 @@ export const Details = ({ route, navigation }) => {
             bid={item}
             keyExtractor={(item) => item.id}
             contentContainerStyle={{ paddingBottom: 45 }}
-            ListHeaderComponent={() => (
-              <React.Fragment>
-                <DetailsHeader />
-                <DetailsDescription />
-              </React.Fragment>
-            )}
           />
         )}
       />
+
     </SafeAreaView>
   );
 };

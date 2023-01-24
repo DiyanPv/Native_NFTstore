@@ -10,6 +10,19 @@ const styles = StyleSheet.create({
   background: "linear-gradient(to right, ##C6FFDD, ##f7797d, #EAEAEA)",
 });
 export const Home = () => {
+  const [nftData, setNftData] = useState(NFTData);
+  const handleSearch= (value) => {
+    if(!value.length>0){
+      setNftData(NFTData)
+    }else{
+      const FilteredNFTData = NFTData.filter((item) => item.name.toLowerCase().includes(value.toLowerCase()));
+      if(FilteredNFTData.length){
+        setNftData(FilteredNFTData)
+      }else{
+        setNftData(NFTData)
+      }
+    }
+    }
   return (
     <SafeAreaView
       style={{
@@ -22,10 +35,10 @@ export const Home = () => {
         style={styles.background}
       >
         <FlatList
-          data={NFTData}
+          data={nftData}
           keyExtractor={(item) => item.id}
           showsVerticalScrollIndicator={false}
-          ListHeaderComponent={<HomeHeader />}
+          ListHeaderComponent={<HomeHeader onSearch={handleSearch} />}
           renderItem={({ item }) => <NFTCard data={item} key={item.id} />}
         />
       </LinearGradient>
